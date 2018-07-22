@@ -1,0 +1,64 @@
+{{>./default/base/header}}
+{{>./default/base/sidebar_overlay}}
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">
+        <a href="/account" class="btn btn-primary" style="padding: 10px 15px;text-transform:none;">Back</a>
+        <a href="/account/invoices/{{data.orderId}}" class="btn btn-primary" style="padding: 10px 15px; margin-left: 5px;text-transform:none;">Download Invoice</a>
+        <div class="page-header text-center">
+          <h1>Order #{{data.orderId}}</h1>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              {{#data}}
+              <tr class="test-table">
+                <td class="price-col">Order Date</td>
+                <td class="product-col">{{data.created_at}}</td>
+              </tr>
+              <tr class="test-table">
+                <td class="price-col" style="vertical-align:top;">Shipping Address</td>
+                <td class="product-col">
+                  <p>{{shipping_line_1}}</p>
+                  <p>{{shipping_line_2}}</p>
+                </td>
+              </tr>
+              <tr class="test-table">
+                <td class="price-col">Payment Method</td>
+                <td class="product-col">{{payment_type}}</td>
+              </tr>
+              <tr class="test-table">
+                <td class="price-col">Total Price</td>
+                <td class="product-col">{{price}}</td>
+              </tr>
+              {{/data}}
+            </tbody>
+          </table>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price (each)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#orderItems}}
+                <tr class="order-table">
+                  <td class="product-col" style="padding: 30px 0;">{{name}}</td>
+                  <td class="product-col" style="padding: 30px 0;">{{quantity}}</td>
+                  <td class="quantity-col" style="padding: 30px 0;">{{price}}</td>
+                </tr>
+              {{/orderItems}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {{>./default/base/sidebarv2}}
+    </div>
+  </div>
+</div>
+{{>./default/base/footer}}

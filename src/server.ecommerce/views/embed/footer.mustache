@@ -1,0 +1,9 @@
+<footer>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  {{^isDemo}}
+  <script type="text/javascript" src="http://localhost:8080/embed/static/js/embed.bundle.js"></script>
+  {{/isDemo}}
+  {{#isDemo}}
+  <script src="/js/ecommerce.bundle.min.js"></script>
+  {{/isDemo}}
+</footer>

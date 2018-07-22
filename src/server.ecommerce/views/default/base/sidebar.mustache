@@ -1,0 +1,19 @@
+<aside class="col-md-3 col-md-pull-9 sidebar sidebar-shop">
+  <div class="widget widget-box widget-shop-category active">
+    <h3 class="widget-title">Categories</h3>
+    <ul class="shop-category-list accordion">
+      {{#categories}}
+        <li>
+          <a href="{{categoryLink}}">{{categoryName}}</a>
+          <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#{{categorySlug}}" aria-expanded="false" aria-controls="{{categorySlug}}"><span class="accordion-icon"></span></button>
+
+          <ul class="collapse" id="{{categorySlug}}" aria-expanded="false">
+            {{#options}}
+            <li><a href="{{link}}"><i class="fa fa-caret-right"></i>{{label}}</a></li>
+            {{/options}}
+          </ul>
+        </li>
+      {{/categories}}
+    </ul>
+  </div>
+</aside>

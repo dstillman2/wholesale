@@ -1,0 +1,254 @@
+{{>./default/base/header}}
+{{>./default/base/sidebar_overlay}}
+<div class="main" id="checkout-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">
+        <div class="page-header text-center">
+          <h1>Checkout</h1>
+        </div>
+        <button class="btn btn-primary" id="back-btn" style="padding: 10px 15px;margin-bottom:35px;display:none;" onclick="ecom.checkout.back(event)">Back</button>
+        <div class="checkout-tabs">
+          <div id="error-message" style="color: red; text-align: center; margin-bottom: 15px;" style="margin-bottom:15px;"></div>
+          <div class="tab-content">
+            <form action="#" id="form-submit" onsubmit="ecom.checkout.onValidateAddressFields(event);" class="checkout-form target-area active">
+              <div id="checkout-address-input" role="tabpanel" class="tab-pane active" id="shipping">
+                <div id="shipping-info" style="margin-bottom:35px;">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="title-group">
+                        <h2 class="title">Shipping Address</h2>
+                        <hr />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Company Name <span class="text-red">*</span></label>
+                        <input type="text" name="company" placeholder="Company" class="form-control" value="{{customer.company}}" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>First Name <span class="text-red">*</span></label>
+                        <input type="text" name="first_name" placeholder="First Name" class="form-control" value="{{customer.firstName}}" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Last Name <span class="text-red">*</span></label>
+                        <input type="text" name="last_name" placeholder="Last Name" class="form-control" value={{customer.lastName}} required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Address 1</label>
+                        <input type="text" name="shipping_address_1" placeholder="Address 1" value="{{customer.address1}}" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Address 2</label>
+                        <input type="text" name="shipping_address_2" placeholder="Address 2" value="{{customer.address2}}" class="form-control" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label>City <span class="text-red">*</span></label>
+                        <input type="text" name="shipping_city" placeholder="City" value="{{customer.city}}" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label>State <span class="text-red">*</span></label>
+                        <input type="text" name="shipping_state" placeholder="State" value="{{customer.state}}" maxlength="2" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label>Zip Code <span class="text-red">*</span></label>
+                        <input type="text" name="shipping_zip_code" placeholder="Zip Code" value="{{customer.zip_code}}" class="form-control" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="title-group">
+                        <h2 class="title">Contact Method</h2>
+                        <hr />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Email Address <span class="text-red">*</span></label>
+                        <input type="text" name="email_address" placeholder="Email Address" class="form-control" value="{{customer.email_address}}" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Phone Number <span class="text-red">*</span></label>
+                        <input type="text" name="phone_number" placeholder="Phone Number" class="form-control" value="{{customer.phone_number}}" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="billing-info" style="margin-bottom:35px;display:none;">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="title-group">
+                        <h2 class="title">Billing Address</h2>
+                        <hr />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-check" style="margin-bottom: 35px;">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" id="same-shipping" onclick="window.ecom.checkout.copyShippingAddressToBillingAddress(event)">
+                      Same as Shipping Address
+                    </label>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Address 1 <span class="text-red">*</span></label>
+                        <input type="text" name="billing_address_1" placeholder="Address 1" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Address 2 <span class="text-red">*</span></label>
+                        <input type="text" name="billing_address_2" placeholder="Address 2" class="form-control" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label>City <span class="text-red">*</span></label>
+                        <input type="text" name="billing_city" placeholder="City" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label>State <span class="text-red">*</span></label>
+                        <input type="text" name="billing_state" placeholder="State" maxlength="2" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label>Zip Code <span class="text-red">*</span></label>
+                        <input type="text" name="billing_zip_code" placeholder="Zip Code" class="form-control" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="radio-inline-container" style="margin-bottom:35px;">
+                      <h2 class="title">Payment Type</h2>
+                      <hr />
+                      <div class="radio">
+                        <label>
+                          <input type="radio" style="display:block;margin:0;" name="payment_type" value="cash" checked>
+                          <span class="check"></span>
+                          <span class="circle"></span>
+                          Cash
+                        </label>
+                      </div>
+                      <div class="radio" style="display:block;margin:0;">
+                        <label>
+                          <input type="radio" style="display:block;margin:0;" name="payment_type" value="credit_card">
+                          <span class="check"></span>
+                          <span class="circle"></span>
+                          Credit Card
+                          {{#marketplace.payments_has_bitcoin}}
+                          / Bitcoin
+                          {{/marketplace.payments_has_bitcoin}}
+                          ({{marketplace.payments_credit_card_markup}}% surcharge)
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="checkout-payment" style="display:none;">
+                <div class="row" style="margin-bottom:35px;">
+                  <div class="col-md-12">
+                    <h2 class="title">Shipping Addresses</h2>
+                    <hr />
+                    <div id="address-1"></div>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom:35px;">
+                  <div class="col-md-12">
+                    <h2 class="title">Payment Info</h2>
+                    <hr />
+                    <div id="pp"></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2 class="title">Order Details</h2>
+                    <hr />
+                    <div id="shopping-cart-view-only"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="clearfix form-action">
+                    <input type="button" id="checkout-btn" onclick="ecom.checkout.onValidateAddressFields(event)" class="btn btn-primary min-width" value="Next Step">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      {{>./default/base/sidebarv2}}
+  </div>
+</div>
+</div>
+<div class="main" id="thank-you" style="display: none;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">
+        <div class="page-header text-center">
+          <h1>Thank you</h1>
+        </div>
+        <div class="checkout-tabs">
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="shipping">
+              <div class="checkout-tabs">
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" style="text-align: center;">
+                    We are currently reviewing your order. You will receive an order confirmation.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{>./default/base/sidebar}}
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+  var data = {
+    stripePublishableKey: '{{{marketplace.payments_stripe_publishable_key}}}',
+    orderMarkup: {{{marketplace.payments_credit_card_markup}}},
+    hasBitcoin: {{{marketplace.payments_has_bitcoin}}}
+  };
+</script>
+{{>./default/base/footer}}

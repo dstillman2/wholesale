@@ -1,0 +1,42 @@
+{{>./default/base/header}}
+{{>./default/base/sidebar_overlay}}
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">
+        <div class="page-header text-center">
+          <h1>Order History</h1>
+        </div>
+        <div class="table-responsive">
+          {{^hasData}}
+          <div style="text-align: center;">
+            No orders have been created.
+          </div>
+          {{/hasData}}
+          {{#hasData}}
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Purchase Price</th>
+                <th>Order Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#data}}
+                <tr data-id={{id}} onclick="window.location.href='/account/orders/{{id}}'"class="order-table hover" role="link">
+                  <td class="product-col" style="padding: 30px 0;">{{id}}</td>
+                  <td class="product-col" style="padding: 30px 0;">{{price}}</td>
+                  <td class="product-col" style="padding: 30px 0;">{{created_at}}</td>
+                </tr>
+              {{/data}}
+            </tbody>
+          </table>
+          {{/hasData}}
+        </div>
+      </div>
+      {{>./default/base/sidebarv2}}
+  </div>
+</div>
+</div>
+{{>./default/base/footer}}

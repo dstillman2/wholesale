@@ -1,0 +1,32 @@
+<aside class="sidemenu">
+  <div class="sidemenu-wrapper">
+    <div class="sidemenu-header">
+      <a href="/" class="sidemenu-logo">
+        <div style="height: 50px; display: inline-block;">
+          <img src="{{logoFilePath}}" alt="logo" style="max-height: 100%;">
+        </div>
+      </a>
+    </div>
+    <ul class="metismenu">
+      {{^isLoggedIn}}
+      <li><a href="/sign-in">Sign In</a></li>
+      <li><a href="/sign-up">Create an Account</a></li>
+      <hr />
+      {{/isLoggedIn}}
+      {{#isLoggedIn}}
+      <li><a href="/account">My Account</a></li>
+      <li><a href="/account/cart">View Cart / Checkout</a></li>
+      <li><a href="/account/logout">Log Out</a></li>
+      <hr />
+      {{/isLoggedIn}}
+      {{#categories}}
+        <li>
+          <a href="{{categoryLink}}">{{categoryName}}</a>
+        </li>
+      {{/categories}}
+      <hr />
+    </ul>
+  </div>
+</aside>
+
+<div class="sidemenu-overlay"></div>

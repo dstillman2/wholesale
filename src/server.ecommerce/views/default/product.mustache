@@ -1,0 +1,124 @@
+{{>./default/base/header}}
+{{>./default/base/sidebar_overlay}}
+
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">
+        <div class="row">
+          <div class="product-gallery-container">
+            {{#data.primaryImage}}
+            <div class="no-image" style="box-sizing:border-box;display:flex;justify-content:center;align-items:center;background:transparent;overflow:hidden;">
+              <div class="product-zoom-wrapper">
+                <div class="product-zoom-container">
+                  <img class="xzoom" id="product-zoom" src="{{data.primaryImage}}" alt="Product Image" />
+                </div>
+              </div>
+            </div>
+            {{/data.primaryImage}}
+            {{^data.primaryImage}}
+            <div class="no-image">
+              No Image Available
+            </div>
+            {{/data.primaryImage}}
+            <div class="product-gallery-wrapper">
+              <div class="owl-data-carousel owl-carousel product-gallery"
+                  data-owl-settings='{ "items":4, "margin":14, "nav": true, "dots":false }'
+                  data-owl-responsive='{}'>
+                  {{#uploads}}
+                  <a href="#" data-image="/products/images/{{src}}" data-zoom-image="/products/images/{{src}}" class="product-gallery-item">
+                    <img src="/products/images/{{src}}" alt="">
+                  </a>
+                  {{/uploads}}
+              </div>
+            </div>
+          </div>
+        {{^hasData}}
+        <div class="product-details">
+          <h2 class="product-title">Product has been removed or does not exist.</h2>
+        </div>
+        {{/hasData}}
+        {{#hasData}}
+        <div class="product-details">
+          {{#isLoggedIn}}
+
+          <ul class="product-meta-list">
+            {{^hasInventory}}
+            <li><label>Availability:</label> <span class="product-stock">Out of Stock</span></li>
+            {{/hasInventory}}
+          </ul>
+
+          {{/isLoggedIn}}
+          <h2 class="product-title">{{data.name}}</h2>
+          {{#isLoggedIn}}
+          <div class="product-meta-row">
+            <div class="product-price-container">
+              <span class="product-price">${{data.price}}</span>
+            </div>
+          </div>
+          {{/isLoggedIn}}
+          {{^isLoggedIn}}
+          <div>
+            <a href="/sign-in">Sign In to View Pricing Information</a>
+          </div>
+          {{/isLoggedIn}}
+          {{#hasOptions}}
+          <label>Options:</label>
+          <ul id="options" onclick="ecom.onOptionsClick(event);" class="filter-size-list">
+            {{#options}}
+            <li class={{className}}>
+              <span class="filter-size" data-type={{type}}>{{type}}</span>
+            </li>
+            {{/options}}
+          </ul>
+          {{/hasOptions}}
+          {{#isLoggedIn}}
+            {{#hasInventory}}
+              <div class="product-action">
+                <div class="product-quantity">
+                  <label>QTY:</label>
+                  <input
+                    id="qty"
+                    onchange="ecom.onQtyChange(event)"
+                    class="single-product-quantity form-control"
+                    type="text"
+                  />
+                </div>
+
+                <a href="#addToCart" id="addtocart" onclick="ecom.onAddToCart(event);return false;" class="btn btn-primary btn-addtobag">Add to Cart</a>
+              </div>
+            {{/hasInventory}}
+          {{/isLoggedIn}}
+        </div>
+        {{/hasData}}
+      </div>
+
+      <div class="product-details-tab">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#description" aria-controls="description" role="tab" data-toggle="tab">
+              Description
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="description">
+            {{{data.description}}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{>./default/base/sidebar}}
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+  var productSpec = {
+    id: {{data.productId}},
+    name: '{{data.name}}',
+    price: {{data.price}},
+    mainProductImage: '{{{data.primaryImage}}}',
+  };
+</script>
+{{>./default/base/footer}}

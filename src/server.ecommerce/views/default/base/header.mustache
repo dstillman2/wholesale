@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{pageTitle}}</title>
+  <meta name="description" content="Premium eCommerce Template">
+
+  <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7COswald:300,400,500,600,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="/vendor/assets/css/plugins.min.css">
+  <link rel="stylesheet" href="/vendor/assets/css/style.css">
+  {{#isProduction}}
+  <link rel="stylesheet" href="/css/style.min.css">
+  {{/isProduction}}
+  {{^isProduction}}
+  <link rel="stylesheet" href="/css/ecommerce.style.css">
+  {{/isProduction}}
+  <script src="/vendor/assets/js/modernizr.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+    <header class="header sticky-header">
+      <div class="container">
+        <a href="/" class="site-logo">
+          <div style="height: 75px; display: inline-block;">
+            <img src="{{logoFilePath}}" alt="logo" style="max-height: 100%;">
+          </div>
+        </a>
+        {{#hasSearchForm}}
+        <div class="search-form-container">
+            <a href="#" class="search-form-toggle" title="Toggle Search"><i class="fa fa-search"></i></a>
+            <form action="#">
+                <div class="dropdown search-dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
+                       All Category
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Fashion</a></li>
+                        <li><a href="#">Electronics</a></li>
+                        <li><a href="#">Furniture</a></li>
+                        <li><a href="#">Equipments</a></li>
+                    </ul>
+                </div>
+                <input type="search" class="form-control" placeholder="Search" required>
+                <button type="submit" title="Search" class="btn"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        {{/hasSearchForm}}
+        {{^hasSearchForm}}
+        <div class="search-form-container" style="visibility: hidden;">
+          <form></form>
+        </div>
+        {{/hasSearchForm}}
+        <ul class="top-links">
+          {{#isLoggedIn}}
+          <li><a href="/account">{{user.email_address}}</a></li>
+          <li><a href="/account/cart">Cart</a></li>
+          {{/isLoggedIn}}
+          {{^isLoggedIn}}
+          <li><a href="/sign-up">Create an Account</a></li>
+          <li><a href="/sign-in">Sign In</a></li>
+          {{/isLoggedIn}}
+        </ul>
+
+
+        {{#isLoggedIn}}
+        <div id="cart-summary"></div>
+        {{/isLoggedIn}}
+
+        <a href="#" class="sidemenu-btn" title="Menu Toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+    </header>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,mBAAM;EACJ,UAAU,EAAE,MAAM",
+"sources": ["../../../app.client_portal/sass/marketplace.embed/index.scss"],
+"names": [],
+"file": "marketplace-embed.style.css"
+}

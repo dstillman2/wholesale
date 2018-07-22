@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nimbus Portal - Delivery Logistics</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/static/assets/css/core.min.css">
+    <link rel="stylesheet" href="/static/assets/css/app.min.css">
+    {{^isProduction}}
+    <link rel="stylesheet" href="/static/css/client_portal.style.css">
+    <link rel="stylesheet" href="/static/css/ordernimbus-embed.css">
+    {{/isProduction}}
+    {{#isProduction}}
+    <link rel="stylesheet" href="/static/css/style.min.css">
+    {{/isProduction}}
+  </head>
+  <body>
+    <div id="{{page}}">
+      <div id="app"></div>
+    </div>
+    <script type="text/javascript">
+
+      {{^isLogin}}
+      var orderNimbusSettings = {
+        permissions: {{{permissions}}},
+        categories: {{{productCategories}}},
+        flags: {{{flags}}},
+        name: "{{name}}",
+        firstName: "{{firstName}}",
+        csrfToken: "{{csrfToken}}"
+      };
+      {{/isLogin}}
+    </script>
+    {{^isProduction}}
+    <script src="http://localhost:8080/wholesale/static/js/wholesale.bundle.js"></script>
+    {{/isProduction}}
+    {{#isProduction}}
+    <script src="/static/js/wholesale.bundle.min.js"></script>
+    {{/isProduction}}
+  </body>
+</html>

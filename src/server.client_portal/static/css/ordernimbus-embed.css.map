@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAa;ECqBb,iDAAiD;EArBjD;;;;;;;;;;;;8EAYyB;IACxB,MAAM,EAAE,CAAC;IACT,OAAO,EAAE,CAAC;IACV,MAAM,EAAE,CAAC;IACT,SAAS,EAAE,IAAI;IACf,IAAI,EAAE,OAAO;IACZ,WAAW,EAAE,qBAAqB;IACnC,cAAc,EAAE,QAAQ;EAGzB;0HAC2C;IAC1C,OAAO,EAAE,KAAK;EAEf,iBAAK;IACJ,WAAW,EAAE,CAAC;EAEf,gCAAO;IACN,UAAU,EAAE,IAAI;EAEjB,uCAAc;IACb,MAAM,EAAE,IAAI;EAEb;6CACkB;IACjB,OAAO,EAAE,EAAE;IACX,OAAO,EAAE,IAAI;EAEd,kBAAM;IACL,eAAe,EAAE,QAAQ;IACzB,cAAc,EAAE,CAAC;EDvChB,qBAAW;IACT,OAAO,EAAE,IAAI;IACb,UAAU,EAAE,IAAI",
+"sources": ["../../../app.client_portal/sass/marketplace.embed/index.scss","../../../app.client_portal/sass/marketplace.embed/reset.scss"],
+"names": [],
+"file": "ordernimbus-embed.css"
+}

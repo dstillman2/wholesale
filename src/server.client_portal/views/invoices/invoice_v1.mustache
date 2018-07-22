@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin-top: 65px;
+        font-size: 10px;
+      }
+
+      .row {
+        margin: 25px 75px;
+      }
+
+      .row::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .col {
+        width: 50%;
+        float: left;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+      }
+
+      tr, td {
+        font-size: 10px;
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      tr, td {
+        padding: 5px 0;
+      }
+
+      th {
+        font-size: 10px;
+        background: #b1b1b1;
+        border: 1px solid #b1b1b1;
+        padding: 2px 0;
+        border-bottom: 1px solid #000;
+      }
+
+      .company-info {
+        margin-bottom: 15px;
+      }
+
+      .company-info div, .bill-to div {
+        padding-bottom: 2px;
+      }
+
+      .bill-heading {
+        padding: 0 !important;
+        padding-top: 5px;
+        margin: 0;
+        width: 75%;
+        background: #f1f1f1;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      h1 {
+        color: #a1a1a1;
+      }
+
+      tr.product:nth-child(odd) {
+        background: #f1f1f1;
+      }
+
+      .calc {
+        border: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col">
+        <div class="company-info">
+          {{#account}}
+          <h2>{{company}}</h2>
+          <div>{{address_1}}</div>
+          <div>{{address_2}}</div>
+          <div style="margin-bottom:5px;">{{city}}, {{state}} {{zip_code}}</div>
+          <div>{{email_address}}</div>
+          <div>{{phone_number}}</div>
+          {{/account}}
+        </div>
+        <div class="bill-to">
+          {{#order}}
+          <div class="bill-heading">SHIP TO</div>
+          <div>{{company}}</div>
+          <div>{{first_name}} {{last_name}}</div>
+          <div>{{shipping_address_1}}</div>
+          <div>{{shipping_address_2}}</div>
+          <div style="margin-bottom:5px;">{{shipping_city}}, {{shipping_state}} {{shipping_zip_code}}</div>
+          <div>{{email_address}}</div>
+          <div>{{phone_number}}</div>
+          {{/order}}
+        </div>
+      </div>
+      <div class="col">
+        <div style="width: 150px;float:right;">
+          <div style="text-align:right;">
+            <h1>INVOICE</h1>
+            <p>{{date}}</p>
+            <p>Invoice #{{order.id}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <table>
+        <tr style="border:0;">
+          <th style="width:70%;">DESCRIPTION</th>
+          <th style="width:15%;">QUANTITY</th>
+          <th style="width:15%;">AMOUNT</th>
+        </tr>
+        {{#orderItems}}
+        <tr class="product">
+          <td style="text-align:left;padding-left:5px;">{{name}}</td>
+          <td>{{quantity}}</td>
+          <td style="text-align:right;padding-right:5px;">{{price}}</td>
+        </tr>
+        {{/orderItems}}
+        <tr class="calc">
+          <td style="border:1px solid #fff;"></td>
+          <td style="border:1px solid #fff;text-align:left;"><b>Subtotal</b></td>
+          <td style="border:1px solid #fff;text-align:left;">
+            <span><b>$</b></span>
+            <span style="float:right;padding-right:5px;">{{subTotal}}</span>
+          </td>
+        </tr>
+        {{#hasDiscount}}
+        <tr class="calc">
+          <td style="border:1px solid #fff;"></td>
+          <td style="border:1px solid #fff;border-bottom:2px solid #000;text-align:left;"><b>Discount</b></td>
+          <td style="border:1px solid #fff;text-align:left;border-bottom:2px solid #000;">
+            <span><b>$</b></span>
+            <span style="float:right;padding-right:5px;">{{discount}}</span>
+          </td>
+        </tr>
+        {{/hasDiscount}}
+        <tr class="calc">
+          <td style="border:1px solid #fff;"></td>
+          <td style="border:1px solid #fff;text-align:left;border-bottom:2px solid #000;"><b>Delivery Fee</b></td>
+          <td style="border:1px solid #fff;text-align:left;border-bottom:2px solid #000;">
+            <span><b>$</b></span>
+            <span style="float:right;padding-right:5px;">{{deliveryFee}}</span>
+          </td>
+        </tr>
+        <tr class="calc">
+          <td style="border:1px solid #fff;"></td>
+          <td style="border:1px solid #fff;text-align:left;"><b>TOTAL Due</b></td>
+          <td style="border:1px solid #fff;text-align:left;">
+            <span><b>$</b></span>
+            <span style="float:right;padding-right:5px;">{{total}}</span>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <h1 style="text-transform:uppercase;">{{orderStatus}}</h1>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+#ordernimbus {
+  /* HTML5 display-role reset for older browsers */ }
+  #ordernimbus html, #ordernimbus body, #ordernimbus div, #ordernimbus span, #ordernimbus applet, #ordernimbus object, #ordernimbus iframe,
+  #ordernimbus h1, #ordernimbus h2, #ordernimbus h3, #ordernimbus h4, #ordernimbus h5, #ordernimbus h6, #ordernimbus p, #ordernimbus blockquote, #ordernimbus pre,
+  #ordernimbus a, #ordernimbus abbr, #ordernimbus acronym, #ordernimbus address, #ordernimbus big, #ordernimbus cite, #ordernimbus code,
+  #ordernimbus del, #ordernimbus dfn, #ordernimbus em, #ordernimbus img, #ordernimbus ins, #ordernimbus kbd, #ordernimbus q, #ordernimbus s, #ordernimbus samp,
+  #ordernimbus small, #ordernimbus strike, #ordernimbus strong, #ordernimbus sub, #ordernimbus sup, #ordernimbus tt, #ordernimbus var,
+  #ordernimbus b, #ordernimbus u, #ordernimbus i, #ordernimbus center,
+  #ordernimbus dl, #ordernimbus dt, #ordernimbus dd, #ordernimbus ol, #ordernimbus ul, #ordernimbus li,
+  #ordernimbus fieldset, #ordernimbus form, #ordernimbus label, #ordernimbus legend,
+  #ordernimbus table, #ordernimbus caption, #ordernimbus tbody, #ordernimbus tfoot, #ordernimbus thead, #ordernimbus tr, #ordernimbus th, #ordernimbus td,
+  #ordernimbus article, #ordernimbus aside, #ordernimbus canvas, #ordernimbus details, #ordernimbus embed,
+  #ordernimbus figure, #ordernimbus figcaption, #ordernimbus footer, #ordernimbus header, #ordernimbus hgroup,
+  #ordernimbus menu, #ordernimbus nav, #ordernimbus output, #ordernimbus ruby, #ordernimbus section, #ordernimbus summary,
+  #ordernimbus time, #ordernimbus mark, #ordernimbus audio, #ordernimbus video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: Helvetica, sans-serif;
+    vertical-align: baseline; }
+  #ordernimbus article, #ordernimbus aside, #ordernimbus details, #ordernimbus figcaption, #ordernimbus figure,
+  #ordernimbus footer, #ordernimbus header, #ordernimbus hgroup, #ordernimbus menu, #ordernimbus nav, #ordernimbus section {
+    display: block; }
+  #ordernimbus body {
+    line-height: 1; }
+  #ordernimbus ol, #ordernimbus ul {
+    list-style: none; }
+  #ordernimbus blockquote, #ordernimbus q {
+    quotes: none; }
+  #ordernimbus blockquote:before, #ordernimbus blockquote:after,
+  #ordernimbus q:before, #ordernimbus q:after {
+    content: '';
+    content: none; }
+  #ordernimbus table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+  #ordernimbus.demoonly {
+    padding: 25px;
+    background: #fff; }
+
+/*# sourceMappingURL=ordernimbus-embed.css.map */

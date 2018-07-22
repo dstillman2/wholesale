@@ -1,0 +1,32 @@
+.nimbus-form {
+  input, select, textarea {
+    &:focus {
+      outline: 2px solid $light-green !important;
+      transition: none !important;
+    }
+
+    &.is-invalid {
+      border: 0px solid transparent !important;
+      outline: 2px solid #f96868 !important;
+      transition: none !important;
+    }
+  }
+}
+
+.xs-field {
+  display: inline-block;
+  padding: 2px 3px;
+}
+
+.link-red {
+  color: #000;
+  text-decoration: underline;
+
+  &.tx {
+    line-height: 40px;
+    padding-left: 35px;
+  }
+  &:hover {
+    color: #000;
+  }
+}

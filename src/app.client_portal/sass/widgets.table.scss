@@ -1,0 +1,118 @@
+.btn-secondary {
+  background: white;
+  border: 1px solid white;
+  transition: none;
+
+  &:hover {
+    box-shadow: inset 0px 0px 3px #ddd;
+    border: 1px solid white;
+    transition: none;
+  }
+}
+
+.btn-secondary-v2 {
+  font-size: 10px;
+  background: transparent;
+  text-transform: none;
+  padding: 2px 4px;
+  border: 1px solid #d4d9de;
+
+  &:hover {
+    border: 1px solid #aaa;
+    box-shadow: inset -1px -1px 4px #ddd;
+
+    transition: 0.2s;
+  }
+}
+
+.btn-secondary-v3 {
+  background: transparent;
+  border: 1px solid #c8ced6;
+  transition: none;
+
+  &:hover {
+    border: 1px solid #aaa;
+    background: transparent;
+    box-shadow: inset -1px -1px 3px #ddd;
+
+    transition: none;
+  }
+}
+
+.table-widget {
+  thead {
+    background: #f9fafb;
+
+    th {
+      position: relative;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.4px;
+      text-transform: none;
+      min-width: 120px;
+
+      &.filterby {
+        &:hover {
+          box-shadow: inset 0 0 3px #ccc;
+          cursor: pointer;
+        }
+
+        &::after {
+          content: '\2195';
+          font-size: 13px;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      transition: none;
+      height: 65px;
+
+      &:hover {
+        transition: none;
+      }
+    }
+  }
+
+  h3.loading {
+    color: #f1f1f1;
+  }
+
+  .table-lg th, .table-lg td {
+    padding: 0.8rem;
+  }
+}
+
+table.nimbus-tb {
+  tr {
+    &.nimbus-hover {
+      cursor: pointer;
+    }
+
+    td {
+      vertical-align: middle;
+
+      &.heading-main {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.table-responsive {
+  @media (max-width: 991px) {
+    display: table;
+  }
+
+  @media (max-width: 767px) {
+    display: block;
+  }
+}

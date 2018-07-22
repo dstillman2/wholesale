@@ -1,0 +1,165 @@
+#messages {
+  position: relative;
+  display: flex;
+  border: 1px solid #ebebeb;
+  background: #f9fafb;
+  flex-direction: column;
+  border-radius: 5px;
+
+  .chat-header {
+    padding: 0 35px;
+    border-bottom: 1px solid #ebebeb;
+
+    h4 {
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0;
+      line-height: 55px;
+    }
+  }
+
+  .chat-body {
+    position: relative;
+    background: #fff;
+    padding: 35px;
+    overflow-y: auto;
+    min-height: 300px;
+    max-height: 475px;
+  }
+
+  .chat-footer {
+    display: flex;
+    align-items: center;
+
+    .msg-icons {
+      flex: 1;
+    }
+
+    .publisher-btn {
+      float: right;
+      padding-right: 35px;
+    }
+
+    input[type="text"] {
+      border: 0;
+      height: 100%;
+      padding: 30px 10px;
+      font-size: 14px;
+      background: #f9fafb;
+      text-indent: 25px;
+      flex: 5;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  ul.chat-body-messages, ul.chat-body-messages li ul {
+    padding: 0;
+    text-align: right;
+
+    li {
+      display: block;
+      list-style-type: none;
+      margin: 10px 0;
+      text-align: left;
+      border-radius: 5px;
+
+      span {
+        display: inline-block;
+        padding: 7px 15px;
+        border-radius: 5px;
+        width: 90%;
+
+        @media (min-width: 750px) {
+          width: 70%;
+        }
+      }
+
+      .message-details {
+        display: inline-block;
+        padding: 0;
+        font-size: 0.9em;
+        color: #999;
+        white-space: nowrap;
+      }
+
+      &.your-message {
+        display: inline-block;
+        text-align: right;
+
+        span:first-child {
+          text-align: left;
+          background: $grey-1;
+        }
+      }
+
+      &.their-message {
+        text-align: left;
+
+        span:first-child {
+          color: #fff;
+          background: $light-blue;
+        }
+      }
+    }
+  }
+
+  ul.chat-body-messages li ul li {
+    margin: 2px 0;
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    top: 56px;
+    width: calc(100% - 10px);
+    left: 0;
+    height: 15px;
+    z-index: 99;
+    background: #fff;
+
+    &.up {
+      bottom: 77px;
+      top: auto;
+    }
+  }
+}
+
+.messages-sidebar {
+  border-radius: 5px;
+  display: block;
+  border: 1px solid #ebebeb;
+
+  .card-body {
+    overflow-y: auto;
+    max-height: 415px;
+    padding: 0;
+  }
+
+  .media-body {
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .badge {
+    background: $light-green;
+  }
+
+  small, time, .small {
+    color: #999;
+  }
+
+  a {
+    transition: 0s background;
+  }
+
+  a:hover {
+    background: #f9f9f9;
+    transition: 0.2s background;
+  }
+
+  h5.card-title {
+    background: #f9fafb;
+  }
+}

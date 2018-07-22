@@ -1,0 +1,17 @@
+#dashboard {
+  .text-light-blue {
+    background: $light-blue;
+    padding: 1px;
+    color: #fff;
+  }
+
+  .progress-bar {
+    background-color: $light-green;
+  }
+
+  .text-danger {
+    background: #f96868;
+    color: #fff !important;
+    padding: 1px;
+  }
+}

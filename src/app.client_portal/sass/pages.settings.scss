@@ -1,0 +1,13 @@
+#settings, #categories, #marketplace {
+  .card-title {
+    position: relative;
+  }
+
+  .btn-secondary-v2 {
+    position: absolute;
+    padding: 6px 10px;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+}

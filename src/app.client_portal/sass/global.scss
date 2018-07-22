@@ -1,0 +1,198 @@
+// Form fields
+label {
+  font-size: 13px;
+  color: #555 !important;
+}
+
+textarea {
+  resize: none;
+}
+
+small, time {
+  color: #F1F1F1;
+
+  a:hover {
+    color: #F1F1F1 !important;
+  }
+}
+
+select.form-control {
+  height: 40px;
+}
+
+input, select, textarea {
+  background: #f9f9f9;
+  border: 1px solid #ddd !important;
+
+  &:focus {
+    background: #fff;
+  }
+}
+
+button.square-border {
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 0;
+}
+
+// Main components
+body .main-container, body>main, body>div>main {
+  min-height: calc(100vh - 80px);
+}
+
+[disabled] {
+  cursor: default !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.chat-footer {
+  border-top: 1px solid #F1F1F1;
+}
+
+.text-primary {
+  color: $light-green !important;
+
+  &:hover {
+    color: #000 !important;
+    color: $light-green !important;
+    text-decoration: underline !important;
+  }
+}
+
+.page-item.active .page-link, .page-item.active .page-link:focus, .page-item.active .page-link:hover {
+  background: $light-green;
+  border: 0;
+}
+
+::-moz-selection { background: $light-green; }
+::selection { background: $light-green; }
+
+#default-search {
+  width: 100%;
+  display: inline-block;
+  margin: 15px 0;
+
+  @media screen and (min-width: 500px) {
+    display: inline;
+    margin: 0;
+  }
+
+  &.lookup-sm::before {
+    left: 15px;
+  }
+
+  input {
+    display: inline-block;
+    color: #000;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #d4d9de!important;
+    border-radius: 3px;
+    transition: none;
+    background: transparent;
+    text-indent: 20px;
+
+    &:focus, &:hover {
+      background: #fff;
+      background: white;
+    }
+
+    @media screen and (min-width: 500px) {
+      width: 60%;
+    }
+  }
+}
+
+.lookup input:hover, .lookup input:focus {
+  background: #FFF;
+}
+
+.badge-default {
+  margin: 5px;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 0;
+}
+
+.badge-success {
+  background: #55d46c;
+}
+
+.header-inverse {
+  position: relative;
+  z-index: 994;
+}
+
+.header-action .nav-link {
+  padding-top: 16px;
+  font-size: 12px;
+}
+
+.form-control {
+  padding: 8px 12px;
+  transition: none;
+
+  &:focus {
+    border: 1px solid transparent;
+    box-shadow: none;
+    transition: none;
+  }
+}
+
+.badge {
+  vertical-align: top;
+  border-radius: 0;
+  font-size: 0.85em;
+}
+
+.form-control:focus {
+  border-color: $light-green;
+}
+
+.card {
+  box-shadow: none;
+  border-radius: 3px;
+  border: 1px solid #e9eef3;
+}
+
+.card-title {
+  background: #fff;
+  padding: 17px 20px;
+}
+
+h5.card-title {
+  font-size: 13px;
+  font-weight: 700 !important;
+  text-transform: none;
+}
+
+.spinner-circle-material {
+  border: 4px transparent solid;
+  border-top: 4px #eaecf7 solid;
+}
+
+.text-up-arrow {
+  background: #53cfe6;
+  color: #fff;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  color: #f1f1f1;
+  text-align: center;
+  border-radius: 50%;
+  border: 3px solid #f1f1f1;
+  line-height: 44px;
+  font-weight: bold;
+  margin: 15px auto 30px auto;
+  background: $light-green;
+
+  &.front {
+    background: #fff;
+    border: 3px solid $light-green;
+    color: $light-green;
+  }
+}

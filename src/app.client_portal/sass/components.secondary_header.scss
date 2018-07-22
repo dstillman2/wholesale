@@ -1,0 +1,15 @@
+.secondary-header {
+  border-bottom: 1px solid #32373f;
+  max-height: 60px;
+
+  h2 {
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    color: #e2e4e6;
+  }
+
+  .nav-link {
+    border-bottom: 0;
+  }
+}

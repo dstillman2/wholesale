@@ -1,0 +1,41 @@
+#products {
+  .tags {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .card-body {
+    align-items: center;
+  }
+
+  .upload-icon::before {
+    content: "\e800";
+  }
+
+  input[type="file"] {
+    visibility: hidden;
+  }
+}
+
+.products-table {
+  width: 100%;
+
+  tr {
+    padding: 5px;
+
+    td {
+      width: 40%;
+
+      &:first-child {
+        white-space: nowrap;
+        width: 20%;
+      }
+    }
+  }
+
+  .label {
+    text-decoration: underline;
+  }
+}

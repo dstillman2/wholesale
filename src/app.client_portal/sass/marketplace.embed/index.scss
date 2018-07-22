@@ -1,0 +1,8 @@
+#ordernimbus {
+  @import 'reset';
+
+  &.demoonly {
+    padding: 25px;
+    background: #fff;
+  }
+}

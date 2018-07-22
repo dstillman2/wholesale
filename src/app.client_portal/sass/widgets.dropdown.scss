@@ -1,0 +1,29 @@
+.dropdown-widget.dropdown {
+  float: left;
+  display: inline-block;
+
+  button {
+    transition: none;
+  }
+
+  button:focus {
+    outline: 2px solid #666 !important;
+    transition: none;
+  }
+
+  .dropdown-toggle {
+    line-height: 30px;
+  }
+
+  .dropdown-item {
+    cursor: pointer;
+    margin: 0;
+    line-height: 35px;
+    width: 100%;
+
+    &:hover {
+      background: #f9fafb;
+      color: #000;
+    }
+  }
+}

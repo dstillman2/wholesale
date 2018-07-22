@@ -1,0 +1,15 @@
+footer {
+  &.site-footer {
+    border-top: 1px solid #f1f1f1;
+
+    .nav-dotted .nav-link {
+      padding: 0;
+      color: #555;
+
+      &:hover {
+        color: #333;
+        border-bottom: 1px underline #999;
+      }
+    }
+  }
+}

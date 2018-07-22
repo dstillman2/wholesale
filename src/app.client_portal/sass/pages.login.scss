@@ -1,0 +1,30 @@
+#login {
+  background: $bg;
+
+  footer a {
+    color: $light-green;
+  }
+
+  a {
+    color: #333;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+
+    & + span {
+      padding: 0 15px;
+      color: #F1F1F1;
+    }
+  }
+
+  hr {
+    border: 0;
+    margin: 5px 0 15px 0;
+  }
+
+  .panel-set {
+    width: 100%;
+    position: relative;
+  }
+}

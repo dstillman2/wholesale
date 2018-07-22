@@ -1,0 +1,73 @@
+.btn-primary, .btn-danger, .btn-secondary {
+  border: 0;
+  padding: 7px 14px!important;
+  font-size: 12px;
+  text-transform: none;
+  color: #fff;
+  border-radius: 2px !important;
+
+  &.large {
+    line-height: 35px;
+  }
+
+  &:hover {
+    border: 0;
+  }
+
+  &:focus {
+    transition: none;
+  }
+}
+
+.badge-primary {
+  border: 1px solid $light-green;
+  background: $light-green;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.btn-primary {
+  border: 1px solid $light-green;
+  background: $light-green;
+
+  &:hover {
+    border: 1px solid $light-green-hover;
+    background: $light-green-hover;
+  }
+
+  &:focus {
+    outline: 2px solid $light-green !important;
+  }
+}
+
+.btn-danger {
+  border: 1px solid #e64c4c !important;
+  &:focus {
+    outline: 2px solid #da5555 !important;
+  }
+}
+
+.btn-secondary {
+  transition: none;
+  background-color: #f3f5f7 !important;
+  border: 1px solid #cacdd0 !important;
+
+  &:focus {
+    outline: 2px solid #999 !important;
+  }
+}
+
+.hover-primary {
+  &:hover, &:focus {
+    color: $light-green !important;
+  }
+}
+
+.btn-xs {
+  padding: 3px !important;
+}
+
+a.btn.disabled {
+  opacity: 0.3;
+  transition: none !important;
+}

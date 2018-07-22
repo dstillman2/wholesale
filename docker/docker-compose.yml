@@ -1,0 +1,39 @@
+version: '3'
+services:
+  ha-proxy:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.haproxy
+    ports:
+      - "80:80"
+    links:
+      - wholesale-server
+      - ecom-server
+  wholesale-server:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile.wholesale
+    restart: always
+    env_file:
+      - file.env
+    ports:
+      - "5959"
+    links:
+      - redis
+    depends_on:
+      - redis
+  ecom-server:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile.ecommerce
+    restart: always
+    env_file:
+      - file.env
+    ports:
+      - "3555"
+    links:
+      - redis
+    depends_on:
+      - redis
+  redis:
+    image: redis
